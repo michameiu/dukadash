@@ -12,7 +12,7 @@ on:
 jobs:
   build:
     name: Duka Dash Build
-    runs-on: node
+    runs-on: python1
 
     strategy:
       matrix:
