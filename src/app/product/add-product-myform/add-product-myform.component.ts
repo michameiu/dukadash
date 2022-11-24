@@ -3,24 +3,23 @@ import { ActivatedRoute, Router } from '@angular/router';
 import { options } from './options';
 
 @Component({
-    selector: 'app-add-shop-myform',
-    templateUrl: './add-shop-myform.component.html',
-    styleUrls: ['./add-shop-myform.component.scss']
+    selector: 'app-add-product-myform',
+    templateUrl: './add-product-myform.component.html',
+    styleUrls: ['./add-product-myform.component.scss']
 })
-export class AddShopMyformComponent implements OnInit {
+export class AddProductMyformComponent implements OnInit {
 
     formItems: any = options;
-    url: string = "api/v1/shops/"
+    url: string = "api/v1/products"
     extra_fields: any
     originalInstance: any
+    isNew: any
 
     //Required Fieds: name
-    //Other fields: active, contact_name, contact_phone, contact_email, image, location
+    //Other fields: active, require_serial_number, shop
     formGroupOrder = [
-        ["name", "active"],
-        ["contact_name", "contact_phone"],
-        ["contact_email", "image"],
-        ["location"]
+        ["shop", "name"],
+        ["require_serial_number", "active"]
     ]
     args = {}
     instance: any;
@@ -42,6 +41,11 @@ export class AddShopMyformComponent implements OnInit {
 
     preSendData(data: any) {
         data["HsPresave"] = true
+        if (this.isNew) {
+            this.url = `api/v1/shops/${data.shop}/products/`
+        } else {
+            this.url = `api/v1/product-configs/`
+        }
         return data
     }
 
@@ -52,7 +56,7 @@ export class AddShopMyformComponent implements OnInit {
     async onPostedData(data: any) {
         // Do something
         setTimeout(() => {
-            this.router.navigate(["shops", "list-shop"])
+            this.router.navigate(["products", "list-product"])
         }, 2000)
     }
 
