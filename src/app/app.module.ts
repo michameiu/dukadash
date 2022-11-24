@@ -8,7 +8,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 
 
-const authConfig = {
+export const authConfig = {
   APIEndpoint: environment.APIEndpoint,
   version: environment.version,
   clientId: environment.clientId,

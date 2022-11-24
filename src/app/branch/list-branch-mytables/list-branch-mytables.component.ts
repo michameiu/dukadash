@@ -2,11 +2,11 @@ import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { filterOptions } from './filterOptions'
 @Component({
-  selector: 'app-lsit-shop',
-  templateUrl: './list-shop-mytables.component.html',
-  styleUrls: ['./list-shop-mytables.component.scss']
+  selector: 'app-lsit-branch',
+  templateUrl: './list-branch-mytables.component.html',
+  styleUrls: ['./list-branch-mytables.component.scss']
 })
-export class ListShopMyTablesComponent implements OnInit {
+export class ListBranchMyTablesComponent implements OnInit {
   currentPage = 'class';
   rows = [];
   temp = [];
@@ -22,19 +22,22 @@ export class ListShopMyTablesComponent implements OnInit {
 
   formItems: any = filterOptions
 
-  url?: string = "api/v1/shops"
+  url?: string = "api/v1/shop-branches"
 
   stats_count = 0
   args = {}
 
-  //Required Fieds: name
-  //Other fields: active, contact_name, contact_phone, contact_phone, image, location
+  //Required Fieds: name, shop
+  //Other fields: active, contact_name, contact_phone, contact_email
   formGroupOrder = [
   ]
 
   // Remmber to pass it to the component
   headers = [
-    'name', 'contact_name', 'contact_phone', 'location', 'active'
+    'shop_name',
+    'name',
+    'contact_name',
+    'contact_phone',
   ]
 
   constructor(private route: Router) { }
@@ -46,7 +49,7 @@ export class ListShopMyTablesComponent implements OnInit {
       const data = action.data;
       // id and name are what the multiselect expects for update
       //   data.school = { id: data.school, name: data.school_name }
-      await this.route.navigate(['shops', 'add-shop'], { state: data });
+      await this.route.navigate(['branches', 'add-branch'], { state: data });
     }
   }
 
@@ -82,7 +85,7 @@ export class ListShopMyTablesComponent implements OnInit {
     }
     if (descriptions.length > 0)
       parsedFilters["descriptions"] = descriptions.join("-")
-    this.url = "api/v1/shops"
+    this.url = "api/v1/shop-branches"
     parsedFilters['paginator'] = 'cursor'
     this.args = parsedFilters
     console.log(parsedFilters)

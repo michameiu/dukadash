@@ -1,0 +1,9 @@
+<div class="container">
+  <h1 class="page-title p-3">
+    Branch
+  </h1>
+  <app-myform [extraFields]="extra_fields" [formItems]="formItems" [url]="url"
+    (onValidatedData)="onValidatedData($event)" [submitButtonText]='"Branch"'
+    [formGroupOrder]="formGroupOrder" [hideButtons]=false (onPostedData)="onPostedData($event)" [instance]="instance">
+  </app-myform>
+</div>
