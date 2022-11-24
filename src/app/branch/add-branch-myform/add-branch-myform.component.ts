@@ -16,11 +16,11 @@ export class AddBranchMyformComponent implements OnInit {
 
     //Required Fieds: name, shop
     //Other fields: active, contact_name, contact_phone, contact_email
-    formGroupOrder =  [
-["name","shop"],
-["active","contact_name"],
-["contact_phone","contact_email"]
-]
+    formGroupOrder = [
+        ["name", "shop"],
+        ["active", "contact_name"],
+        ["contact_phone", "contact_email"]
+    ]
     args = {}
     instance: any;
 
@@ -39,7 +39,7 @@ export class AddBranchMyformComponent implements OnInit {
 
     }
 
-    preSendData(data:any) {
+    preSendData(data: any) {
         data["HsPresave"] = true
         return data
     }
@@ -48,11 +48,11 @@ export class AddBranchMyformComponent implements OnInit {
         console.log(data)
     }
 
-  async onPostedData(data:any) {
+    async onPostedData(data: any) {
         // Do something
-        setTimeout(()=>{
-            this.router.navigate(["../"])
-        },2000)
+        setTimeout(() => {
+            this.router.navigate(["branches", "list-branch"])
+        }, 2000)
     }
 
 
