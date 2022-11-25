@@ -26,6 +26,7 @@ export class ListBranchMyTablesComponent implements OnInit {
 
   stats_count = 0
   args = {}
+  collapseFilters = false
 
   //Required Fieds: name, shop
   //Other fields: active, contact_name, contact_phone, contact_email

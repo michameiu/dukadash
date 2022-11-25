@@ -5,8 +5,8 @@
     <div class="col-md-12">
       <h1 class="page-title mt-3">View Product</h1>
       <app-myform [formItems]="formItems" submitButtonText="Search" [isValidationOnly]="isValidationOnly"
-        (onValidatedData)="onValidatedData($event)" componentType="filter" formActionName="Search" submitButtonText=""
-        [formGroupOrder]="formGroupOrder">
+        (onValidatedData)="onValidatedData($event)" [collapseFilters]="collapseFilters" componentType="filter"
+        formActionName="Search" submitButtonText="" [formGroupOrder]="formGroupOrder">
       </app-myform>
     </div>
     <hr />

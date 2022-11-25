@@ -71,7 +71,7 @@ export const options = {
                 "label": "Created by"
             },
             "shop": {
-                "type": "multifield",
+                "type": "field",
                 "placeholder": "Search shop name..",
                 "required": true,
                 "multiple": false,

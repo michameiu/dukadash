@@ -1,4 +1,4 @@
-<div class="container-fluid">
+<div class="container">
   <div *ngIf="isAuthenticated$ |async">
     <nav class="navbar navbar-expand-lg navbar-dark bg-primary rounded">
       <div class="container-fluid">
@@ -58,6 +58,22 @@
                   <hr class="dropdown-divider">
                 </li>
                 <li><a class="dropdown-item" routerLink="products/list-product">List Products</a></li>
+
+                <!-- <li><a class="dropdown-item" href="#">Something else here</a></li> -->
+              </ul>
+            </li>
+
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="#" id="PurchasesDropdown" role="button"
+                data-bs-toggle="dropdown" aria-expanded="false">
+                Purchases
+              </a>
+              <ul class="dropdown-menu" aria-labelledby="PurchasesDropdown">
+                <li><a class="dropdown-item" routerLink="purchases/add-purchase">Add Purchases</a></li>
+                <li>
+                  <hr class="dropdown-divider">
+                </li>
+                <li><a class="dropdown-item" routerLink="purchases/list-purchase">List Purchases</a></li>
 
                 <!-- <li><a class="dropdown-item" href="#">Something else here</a></li> -->
               </ul>

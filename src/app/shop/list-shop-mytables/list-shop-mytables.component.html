@@ -6,7 +6,7 @@
       <h1 class="page-title mt-3">View Shops</h1>
       <app-myform [formItems]="formItems" submitButtonText="Search" [isValidationOnly]="isValidationOnly"
         (onValidatedData)="onValidatedData($event)" componentType="filter" formActionName="Search" submitButtonText=""
-        [formGroupOrder]="formGroupOrder">
+        [formGroupOrder]="formGroupOrder" [collapseFilters]="collapseFilters">
       </app-myform>
     </div>
     <hr />

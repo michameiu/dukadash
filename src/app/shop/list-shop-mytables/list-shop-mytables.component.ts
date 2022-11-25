@@ -19,7 +19,7 @@ export class ListShopMyTablesComponent implements OnInit {
   enableEdit: boolean = true
   pageSize: number = 10
   isValidationOnly = true
-
+  collapseFilters = false
   formItems: any = filterOptions
 
   url?: string = "api/v1/shops"

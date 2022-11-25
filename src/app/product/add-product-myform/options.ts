@@ -50,7 +50,7 @@ export const options = {
                 "label": "Require serial number"
             },
             "shop": {
-                "type": "multifield",
+                "type": "field",
                 "placeholder": "Search shop name..",
                 "required": true,
                 "multiple": false,

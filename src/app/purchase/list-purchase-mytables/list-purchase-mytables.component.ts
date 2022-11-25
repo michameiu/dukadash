@@ -2,11 +2,11 @@ import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { filterOptions } from './filterOptions'
 @Component({
-  selector: 'app-lsit-product',
-  templateUrl: './list-product-mytables.component.html',
-  styleUrls: ['./list-product-mytables.component.scss']
+  selector: 'app-lsit-purchase',
+  templateUrl: './list-purchase-mytables.component.html',
+  styleUrls: ['./list-purchase-mytables.component.scss']
 })
-export class ListProductMyTablesComponent implements OnInit {
+export class ListPurchaseMyTablesComponent implements OnInit {
   currentPage = 'class';
   rows = [];
   temp = [];
@@ -20,25 +20,40 @@ export class ListProductMyTablesComponent implements OnInit {
   pageSize: number = 10
   isValidationOnly = true
 
+
   formItems: any = filterOptions
 
-  url?: string = "api/v1/shops/4/products"
-  instanceUrl: string = "api/v1/product-configs"
-  collapseFilters = false
+  url?: string = "api/v1/shop-branches/6/purchases"
+
   stats_count = 0
   args = {}
 
-  //Required Fieds: name
-  //Other fields: active, require_serial_number, shop
+  instanceUrl = "api/v1/purchases"
+
+  collapseFilters = false
+  showNumbering = true
+  //Required Fieds: transaction_type, branch
+  //Other fields: active, name, vendor 
   formGroupOrder = [
   ]
 
   // Remmber to pass it to the component
   headers = [
-    "shop_name", "name", "require_serial_number"
+    "branch_name",
+    "name",
+    {
+      name: "Transaction Type",
+      source: "transaction_type_display"
+    },
+    {
+      name: "Date",
+      source: "created"
+    }
   ]
 
-  constructor(private route: Router) { }
+  constructor(private route: Router) {
+
+  }
 
   ngOnInit() {
   }
@@ -46,8 +61,8 @@ export class ListProductMyTablesComponent implements OnInit {
     if (action.name == "Edit") {
       const data = action.data;
       // id and name are what the multiselect expects for update
-      data.shop = { id: data.shop, name: data.shop_name }
-      await this.route.navigate(['products', 'add-product'], { state: data });
+      // data.branch = { id: data.branch, name: data.branch }
+      await this.route.navigate(['purchases', 'add-purchase'], { state: data });
     }
   }
 
@@ -83,7 +98,7 @@ export class ListProductMyTablesComponent implements OnInit {
     }
     if (descriptions.length > 0)
       parsedFilters["descriptions"] = descriptions.join("-")
-    this.url = "api/v1/shops/4/products"
+    this.url = "api/v1/shop-branches/6/purchases"
     parsedFilters['paginator'] = 'cursor'
     this.args = parsedFilters
     console.log(parsedFilters)
