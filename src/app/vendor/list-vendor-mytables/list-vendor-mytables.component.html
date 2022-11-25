@@ -3,7 +3,7 @@
 
   <div class="row">
     <div class="col-md-12">
-      <h1 class="page-title mt-3">View Purchase</h1>
+      <h1 class="page-title mt-3">View Vendor</h1>
       <app-myform [formItems]="formItems" [collapseFilters]="collapseFilters" submitButtonText="Search"
         [isValidationOnly]="isValidationOnly" (onValidatedData)="onValidatedData($event)" componentType="filter"
         formActionName="Search" submitButtonText="" [formGroupOrder]="formGroupOrder">
@@ -11,9 +11,9 @@
     </div>
     <hr />
   </div>
-  <my-app-tables searchFieldName="name" searchFieldNameMessage="Purchase" [enableEdit]="enableEdit"
-    [enableDelete]="enableDelete" [listTypeUrl]="url" [instanceUrl]="instanceUrl" [args]='args' [page_size]="pageSize"
-    [showNumbering]="showNumbering" [headers]="headers" (actionsEvent)="handleActions($event)">
+  <my-app-tables searchFieldName="name" searchFieldNameMessage="Vendor" [enableEdit]="enableEdit"
+    [enableDelete]="enableDelete" [instanceUrl]="instanceUrl" [listTypeUrl]="url" [args]='args' [page_size]="pageSize"
+    [showNumbering]="showNumbering" (actionsEvent)="handleActions($event)" [headers]="headers">
   </my-app-tables>
 
 </div>

@@ -6,6 +6,7 @@
     "start": "ng serve",
     "build": "ng build --configuration production",
     "watch": "ng build --watch --configuration development",
+    "deploy": "ng build --configuration production;rsync -av -e 'ssh -p 22'  -r dist/dukadash/*  micha@roometo.com:/home/micha/apps/dukadash",
     "test": "ng test"
   },
   "private": true,

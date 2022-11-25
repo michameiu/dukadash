@@ -19,6 +19,10 @@ const routes: Routes = [
     loadChildren: () => import('./purchase/purchase.module').then(m => m.PurchasesModule)
   },
   {
+    path: "vendors",
+    loadChildren: () => import('./vendor/vendor.module').then(m => m.VendorsModule)
+  },
+  {
     path: "**",
     redirectTo: "shops"
   }
