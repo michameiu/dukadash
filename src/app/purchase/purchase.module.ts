@@ -9,7 +9,8 @@ import { ListPurchaseMyTablesComponent } from './list-purchase-mytables/list-pur
 import { HTTP_INTERCEPTORS } from '@angular/common/http';
 import {AuthGuard,AuthInterceptor} from "@sisitech/ngxs-auth"
 
-import { environment } from 'src/environments/environment'
+import { environment } from 'src/environments/environment';
+import { ViewPurchaseComponent } from './view-purchase/view-purchase.component'
 
 const authConfig = {
   APIEndpoint: environment.APIEndpoint,
@@ -25,7 +26,7 @@ const authConfig = {
         MyformModule.forChild(authConfig),
         TablesModule.forChild(authConfig),
     ],
-    declarations: [AddPurchaseMyformComponent,ListPurchaseMyTablesComponent],
+    declarations: [AddPurchaseMyformComponent,ListPurchaseMyTablesComponent, ViewPurchaseComponent],
     providers: [TablesService, {
         provide: HTTP_INTERCEPTORS,
         useClass: AuthInterceptor,

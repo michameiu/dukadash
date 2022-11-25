@@ -48,7 +48,16 @@ export class ListPurchaseMyTablesComponent implements OnInit {
     {
       name: "Date",
       source: "created"
-    }
+    },
+    {
+      name: 'View',
+      type: "actions",
+      data: [
+        {
+          name: "View"
+        }
+      ]
+    },
   ]
 
   constructor(private route: Router) {
@@ -58,12 +67,18 @@ export class ListPurchaseMyTablesComponent implements OnInit {
   ngOnInit() {
   }
   async handleActions(action: any) {
+    const data = action.data;
+    console.log(action)
     if (action.name == "Edit") {
-      const data = action.data;
       // id and name are what the multiselect expects for update
       // data.branch = { id: data.branch, name: data.branch }
       await this.route.navigate(['purchases', 'add-purchase'], { state: data });
+    } else if (action.name.toLowerCase() == "view") {
+
+      await this.route.navigate(['purchases', 'view-purchase', data.id], { state: data });
+
     }
+
   }
 
   exportTriggerd(event: any) {

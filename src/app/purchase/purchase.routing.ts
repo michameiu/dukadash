@@ -1,6 +1,7 @@
 import { Routes } from '@angular/router';
 import { AddPurchaseMyformComponent } from './add-purchase-myform/add-purchase-myform.component';
 import { ListPurchaseMyTablesComponent } from './list-purchase-mytables/list-purchase-mytables.component';
+import { ViewPurchaseComponent } from './view-purchase/view-purchase.component';
 
 
 // Copy to app.routing
@@ -20,7 +21,11 @@ export const PurchaseRoutes: Routes = [
     component: ListPurchaseMyTablesComponent
   },
   {
-    path:"**",
-    redirectTo:"list-purchase"
+    path: 'view-purchase/:id',
+    component: ViewPurchaseComponent
+  },
+  {
+    path: "**",
+    redirectTo: "list-purchase"
   }
 ];
