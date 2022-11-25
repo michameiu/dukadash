@@ -6,7 +6,7 @@
     "start": "ng serve",
     "build": "ng build --configuration production",
     "watch": "ng build --watch --configuration development",
-    "deploy": "ng build --configuration production;rsync -av -e 'ssh -p 22'  -r dist/dukadash/*  micha@roometo.com:/home/micha/apps/dukadash",
+    "deploy": "git push origin main;ng build --configuration production;rsync -av -e 'ssh -p 22'  -r dist/dukadash/*  micha@roometo.com:/home/micha/apps/dukadash",
     "test": "ng test"
   },
   "private": true,
@@ -23,7 +23,7 @@
     "@ngxs/store": "^3.7.5",
     "@popperjs/core": "^2.11.6",
     "@sisitech/myform": "0.0.10",
-    "@sisitech/ngxs-auth": "0.0.5",
+    "@sisitech/ngxs-auth": "0.0.6",
     "@sisitech/schematics": "^1.0.14",
     "@sisitech/tables": "0.0.14",
     "@types/bootstrap": "^5.2.6",
