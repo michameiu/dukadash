@@ -1,12 +1,15 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnDestroy, OnInit } from '@angular/core';
+import { FormControl, FormGroup } from '@angular/forms';
 import { Router } from '@angular/router';
 import { filterOptions } from './filterOptions'
+import { options } from '../add-purchase-myform/options'
+import { Subscription } from 'rxjs';
 @Component({
   selector: 'app-lsit-purchase',
   templateUrl: './list-purchase-mytables.component.html',
   styleUrls: ['./list-purchase-mytables.component.scss']
 })
-export class ListPurchaseMyTablesComponent implements OnInit {
+export class ListPurchaseMyTablesComponent implements OnInit, OnDestroy {
   currentPage = 'class';
   rows = [];
   temp = [];
@@ -23,7 +26,7 @@ export class ListPurchaseMyTablesComponent implements OnInit {
 
   formItems: any = filterOptions
 
-  url?: string = "api/v1/shop-branches/6/purchases"
+  url?: string
 
   stats_count = 0
   args = {}
@@ -60,11 +63,22 @@ export class ListPurchaseMyTablesComponent implements OnInit {
     },
   ]
 
+  shopBranchForm = new FormGroup({
+    branch: new FormControl()
+  })
+  shopBranchOptions = { ...options.actions.POST.branch, display_name: "full_name" }
+  shopSub?: Subscription
   constructor(private route: Router) {
-
   }
-
+  ngOnDestroy(): void {
+    this.shopSub?.unsubscribe()
+  }
   ngOnInit() {
+    this.shopSub = this.shopBranchForm.valueChanges.subscribe(res => {
+      console.log(res)
+      this.url = `api/v1/shop-branches/${res.branch}/purchases`
+      this.args = {}
+    })
   }
   async handleActions(action: any) {
     const data = action.data;

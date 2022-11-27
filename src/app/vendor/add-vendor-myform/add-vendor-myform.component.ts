@@ -43,7 +43,7 @@ export class AddVendorMyformComponent implements OnInit {
     preSendData(data: any) {
         data["HsPresave"] = true
         if (this.isNew) {
-            this.url = `api/v1/shop/${data.shop}/vendors/`
+            this.url = `api/v1/shops/${data.shop}/vendors/`
         } else {
             this.url = `api/v1/vendors/`
         }

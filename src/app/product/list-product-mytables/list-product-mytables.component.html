@@ -14,6 +14,14 @@
   <my-app-tables searchFieldName="school_name" searchFieldNameMessage="Product" [enableEdit]="enableEdit"
     [enableDelete]="enableDelete" [listTypeUrl]="url" [args]='args' [page_size]="pageSize" [showNumbering]="false"
     (actionsEvent)="handleActions($event)" [instanceUrl]="instanceUrl" [headers]="headers">
+
+    <div header>
+      <app-myinput componentType="form" [data]="shopBranchOptions" [form]="shopForm" formControName="shop">
+      </app-myinput>
+    </div>
+
+
+
   </my-app-tables>
 
 </div>

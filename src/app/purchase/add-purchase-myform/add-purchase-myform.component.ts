@@ -19,7 +19,7 @@ export class AddPurchaseMyformComponent implements OnInit {
     formGroupOrder = [
         ["branch", "name"],
         ["active", "transaction_type"],
-        ["vendor"]
+        ["vendor", 'contact_name']
     ]
     args = {}
     instance: any;

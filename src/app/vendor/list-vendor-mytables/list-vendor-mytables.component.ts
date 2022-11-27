@@ -1,12 +1,15 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnDestroy, OnInit } from '@angular/core';
+import { FormControl, FormGroup } from '@angular/forms';
 import { Router } from '@angular/router';
+import { Subscription } from 'rxjs';
+import { options } from '../add-vendor-myform/options';
 import { filterOptions } from './filterOptions'
 @Component({
   selector: 'app-lsit-vendor',
   templateUrl: './list-vendor-mytables.component.html',
   styleUrls: ['./list-vendor-mytables.component.scss']
 })
-export class ListVendorMyTablesComponent implements OnInit {
+export class ListVendorMyTablesComponent implements OnInit, OnDestroy {
   currentPage = 'class';
   rows = [];
   temp = [];
@@ -23,7 +26,7 @@ export class ListVendorMyTablesComponent implements OnInit {
 
   formItems: any = filterOptions
 
-  url?: string = "api/v1/shops/4/vendors"
+  url?: string// = "api/v1/shops/4/vendors"
   instanceUrl = "api/v1/vendors"
   stats_count = 0
   args = {}
@@ -40,9 +43,23 @@ export class ListVendorMyTablesComponent implements OnInit {
     "shop_name", "name", "contact_name", "contact_phone", "contact_email"
   ]
 
+  shopForm = new FormGroup({
+    shop: new FormControl()
+  })
+  shopBranchOptions = options.actions.POST.shop
+  shopSub?: Subscription
+
   constructor(private route: Router) { }
+  ngOnDestroy(): void {
+    this.shopSub?.unsubscribe()
+
+  }
 
   ngOnInit() {
+    this.shopSub = this.shopForm.valueChanges.subscribe(res => {
+      this.url = `api/v1/shops/${res.shop}/vendors`
+      this.args = {}
+    })
   }
   async handleActions(action: any) {
     if (action.name == "Edit") {
