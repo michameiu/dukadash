@@ -49,7 +49,7 @@ export class ListBranchMyTablesComponent implements OnInit {
     if (action.name == "Edit") {
       const data = action.data;
       // id and name are what the multiselect expects for update
-      data.shop = { id: data.shop, name: data.shop_name }
+      // data.shop = { id: data.shop, name: data.shop_name }
       await this.route.navigate(['branches', 'add-branch'], { state: data });
     }
   }
