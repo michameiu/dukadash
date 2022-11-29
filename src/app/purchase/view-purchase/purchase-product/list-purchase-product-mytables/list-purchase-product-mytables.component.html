@@ -1,0 +1,18 @@
+<div class="container">
+  <!-- <div class="row">
+    <div class="col-md-12">
+      <h1 class="page-title mt-3">View  PurchaseProduct</h1>
+      <app-myform [formItems]="formItems" [collapseFilters]="collapseFilters"  submitButtonText="Search" [isValidationOnly]="isValidationOnly"
+        (onValidatedData)="onValidatedData($event)" componentType="filter" formActionName="Search" submitButtonText=""
+        [formGroupOrder]="formGroupOrder">
+      </app-myform>
+    </div>
+    <hr />
+  </div> -->
+  <my-app-tables instanceUrl="api/v1/purchase-products" searchFieldName="school_name"
+    searchFieldNameMessage="PurchaseProduct" [enableEdit]="enableEdit" [enableDelete]="enableDelete" [listTypeUrl]="url"
+    [args]='args' [headers]="headers" [page_size]="pageSize" [showNumbering]="showNumbering"
+    (actionsEvent)="handleActions($event)">
+  </my-app-tables>
+
+</div>

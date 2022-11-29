@@ -1,6 +1,6 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { ViewPurchaseComponent } from './view-purchase.component';
+import { ViewPurchaseComponent } from "./ViewPurchaseComponent";
 
 describe('ViewPurchaseComponent', () => {
   let component: ViewPurchaseComponent;
@@ -8,9 +8,9 @@ describe('ViewPurchaseComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ ViewPurchaseComponent ]
+      declarations: [ViewPurchaseComponent]
     })
-    .compileComponents();
+      .compileComponents();
 
     fixture = TestBed.createComponent(ViewPurchaseComponent);
     component = fixture.componentInstance;

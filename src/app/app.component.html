@@ -1,4 +1,4 @@
-<div class="container">
+<div class="container-fluid">
   <div *ngIf="isAuthenticated$ |async">
     <nav class="navbar navbar-expand-lg navbar-dark bg-primary rounded">
       <div class="container-fluid">
@@ -113,7 +113,11 @@
       </div>
     </nav>
 
-    <router-outlet></router-outlet>
+    <div class="row">
+      <router-outlet></router-outlet>
+    </div>
+
+
   </div>
   <div *ngIf="! (isAuthenticated$ |async)">
     <div style="height: 100vh;" class="row  div-center ">

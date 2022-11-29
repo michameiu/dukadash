@@ -1,5 +1,5 @@
 export const options = {
-  "name": "List Create Shop Purchases Api",
+  "name": "List Create Purchase Purchase Products Api",
   "description": "",
   "renders": [
     "application/json",
@@ -36,6 +36,34 @@ export const options = {
         "read_only": false,
         "label": "Active"
       },
+      "buying_price": {
+        "type": "integer",
+        "required": true,
+        "read_only": false,
+        "label": "Buying price",
+        "min_value": -2147483648,
+        "max_value": 2147483647
+      },
+      "amount": {
+        "type": "integer",
+        "required": true,
+        "read_only": false,
+        "label": "Amount",
+        "min_value": -2147483648,
+        "max_value": 2147483647
+      },
+      "paid": {
+        "type": "boolean",
+        "required": false,
+        "read_only": false,
+        "label": "Paid"
+      },
+      "selling_price": {
+        "type": "float",
+        "required": true,
+        "read_only": false,
+        "label": "Selling price"
+      },
       "transaction_type": {
         "type": "choice",
         "required": true,
@@ -52,29 +80,42 @@ export const options = {
           }
         ]
       },
-      "name": {
+      "serial_numbers": {
         "type": "string",
         "required": false,
         "read_only": false,
-        "label": "Name",
-        "max_length": 45
+        "label": "Serial numbers",
+        "max_length": 500
       },
-      "vendor": {
-        "type": "field",
+      "quantity": {
+        "type": "integer",
         "required": false,
         "read_only": false,
-        "label": "Vendor"
+        "label": "Quantity",
+        "min_value": -2147483648,
+        "max_value": 2147483647
       },
-      "branch": {
+      "status": {
+        "type": "string",
+        "required": false,
+        "read_only": true,
+        "label": "Status"
+      },
+      "purchase": {
         "type": "field",
         "required": true,
-        "multiple": false,
-        "placeholder": "Select branch",
-        "url": `api/v1/shop-branches/`,
         "read_only": false,
+        "label": "Purchase",
+
+      },
+      "product": {
+        "type": "field",
+        "required": true,
+        "read_only": false,
+        "label": "Product",
         "search_field": "name",
-        "display_name": "full_name",
-        "label": "Branch"
+        "display_name": "name",
+        "url": ``,
       }
     }
   }
