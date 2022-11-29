@@ -50,6 +50,7 @@ export class ViewPurchaseComponent implements OnInit, OnDestroy {
     }
     onAddedUpdate(added: any) {
         this.args = {}
+        this.selectedPurchaseProduct = null
     }
 
     onActions(action: any) {
