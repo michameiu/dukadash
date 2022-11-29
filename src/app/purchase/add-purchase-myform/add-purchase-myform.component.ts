@@ -49,6 +49,7 @@ export class AddPurchaseMyformComponent implements OnInit {
         }
         return data
     }
+
     onValidatedData(data: any) {
         console.log(data)
     }
@@ -56,7 +57,9 @@ export class AddPurchaseMyformComponent implements OnInit {
     async onPostedData(data: any) {
         // Do something
         setTimeout(() => {
-            this.router.navigate(['purchases', 'list-purchase'])
+            this.router.navigate(['purchases', 'view-purchase', data.id], { state: data });
+
+            // this.router.navigate(['purchases', 'list-purchase'])
         }, 1300)
     }
 

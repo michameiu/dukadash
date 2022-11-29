@@ -62,7 +62,7 @@ export class ListProductMyTablesComponent implements OnInit, OnDestroy {
     if (action.name == "Edit") {
       const data = action.data;
       // id and name are what the multiselect expects for update
-      data.shop = { id: data.shop, name: data.shop_name }
+      // data.shop = { id: data.shop, name: data.shop_name }
       await this.route.navigate(['products', 'add-product'], { state: data });
     }
   }
