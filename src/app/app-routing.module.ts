@@ -23,6 +23,10 @@ const routes: Routes = [
     loadChildren: () => import('./vendor/vendor.module').then(m => m.VendorsModule)
   },
   {
+    path: "sales",
+    loadChildren: () => import('./sale/sale.module').then(m => m.SalesModule)
+  },
+  {
     path: "**",
     redirectTo: "shops"
   }
