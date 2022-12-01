@@ -47,7 +47,8 @@
         </div>
         <div class="row">
             <div class="col-md-8" *ngIf="url !=''">
-                <app-lsit-purchase-product (onActions)="onActions($event)" [args]="args" [url]="url">
+                <app-lsit-purchase-product (onActions)="onActions($event)" [args]="args" [url]="url"
+                    [total_price]="instance.total_price">
                 </app-lsit-purchase-product>
             </div>
             <div class="col-md-4" *ngIf="shopId">

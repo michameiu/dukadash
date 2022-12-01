@@ -16,10 +16,12 @@ export class ListSaleProductMyTablesComponent implements OnInit {
   loader: any = false;
   enableDelete: boolean = true
   enableExport: boolean = true
-  enableEdit: boolean = true
+  enableEdit: boolean = false
   pageSize: number = 10
   isValidationOnly = true
 
+  @Input()
+  total_price = 0
 
   formItems: any = filterOptions
   @Input()
@@ -37,10 +39,12 @@ export class ListSaleProductMyTablesComponent implements OnInit {
   //Required Fieds: selling_price, sale, product
   //Other fields: active, serial_numbers, quantity
   formGroupOrder = [
+
   ]
 
   // Remmber to pass it to the component
   headers = [
+    'product_name', 'transaction_type_display', 'selling_price', 'products_count', 'total_price', { name: "Serials / Quantity", source: 'serials_quantity' }
   ]
 
   constructor(private route: Router) { }

@@ -30,6 +30,9 @@ export class ListPurchaseProductMyTablesComponent implements OnInit {
   @Input()
   args = {}
 
+  @Input()
+  total_price = 0
+
   @Output()
   onActions: EventEmitter<any> = new EventEmitter()
 
@@ -42,7 +45,7 @@ export class ListPurchaseProductMyTablesComponent implements OnInit {
 
   // Remmber to pass it to the component
   headers = [
-    'product_name', 'buying_price', 'transaction_type_display', 'serials_quantity'
+    'product_name', 'transaction_type_display', 'buying_price', 'products_count', 'total_price', 'serials_quantity'
   ]
 
   constructor(private route: Router) { }

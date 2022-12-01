@@ -1,4 +1,4 @@
-import { Component, OnDestroy, OnInit } from '@angular/core';
+import { Component, Input, OnDestroy, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { Subscription } from 'rxjs';
 
@@ -20,6 +20,8 @@ export class ViewPurchaseComponent implements OnInit, OnDestroy {
     postUrl: string = "";
     selectedPurchaseProduct?: any;
     extra_fields: any;
+
+
     constructor(private route: ActivatedRoute, private router: Router) {
         this.routeParamSub = this.route.queryParams.subscribe(params => {
             if (this.router.getCurrentNavigation()?.extras.state) {
@@ -49,8 +51,9 @@ export class ViewPurchaseComponent implements OnInit, OnDestroy {
         this.shopId = instance.shop
     }
     onAddedUpdate(added: any) {
-        this.args = {}
-        this.selectedPurchaseProduct = null
+        // this.args = {}
+        // this.selectedPurchaseProduct = null
+        window.location.reload();
     }
 
     onActions(action: any) {

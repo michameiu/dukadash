@@ -20,6 +20,8 @@ export class ViewSaleComponent implements OnInit {
   postUrl: string = "";
   selectedSaleProduct?: any;
   extra_fields: any;
+
+  total_price = 0
   constructor(private route: ActivatedRoute, private router: Router) {
     this.routeParamSub = this.route.queryParams.subscribe(params => {
       if (this.router.getCurrentNavigation()?.extras.state) {
@@ -49,8 +51,9 @@ export class ViewSaleComponent implements OnInit {
     this.shopId = instance.shop
   }
   onAddedUpdate(added: any) {
-    this.args = {}
-    this.selectedSaleProduct = null
+    // this.args = {}
+    // this.selectedSaleProduct = null
+    window.location.reload();
   }
 
   onActions(action: any) {
