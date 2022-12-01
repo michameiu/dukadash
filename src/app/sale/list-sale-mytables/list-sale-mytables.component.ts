@@ -48,6 +48,7 @@ export class ListSaleMyTablesComponent implements OnInit {
       source: "created"
     },
     "total_price",
+
     {
       name: 'View',
       type: "actions",

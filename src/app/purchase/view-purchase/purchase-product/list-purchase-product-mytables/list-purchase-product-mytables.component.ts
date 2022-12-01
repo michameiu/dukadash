@@ -45,7 +45,16 @@ export class ListPurchaseProductMyTablesComponent implements OnInit {
 
   // Remmber to pass it to the component
   headers = [
-    'product_name', 'transaction_type_display', 'buying_price', 'products_count', 'total_price', 'serials_quantity'
+    'product_name', 'transaction_type_display', 'buying_price',
+    {
+      name: "products count",
+      source: "stats.products_count"
+    },
+    {
+      name: "sold_count",
+      source: "stats.sold_count"
+    },
+    'products_count', 'total_price', 'serials_quantity'
   ]
 
   constructor(private route: Router) { }

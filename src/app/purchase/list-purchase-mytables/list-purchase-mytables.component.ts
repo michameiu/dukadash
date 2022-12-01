@@ -52,6 +52,14 @@ export class ListPurchaseMyTablesComponent implements OnInit, OnDestroy {
       name: "Date",
       source: "created"
     },
+    {
+      name: "products count",
+      source: "stats.products_count"
+    },
+    {
+      name: "sold_count",
+      source: "stats.sold_count"
+    },
     "total_price",
     {
       name: 'View',
