@@ -14,8 +14,8 @@
 
 <sistch-tables-single-view [instance]="providedInstance" (setInstance)="setIntance($event)" [id]="id"
     instanceUrl="api/v1/purchases">
-    <div class="mt-3">
-        <div *ngIf="instance" class=" d-flex bg-secondary bg-opacity-75 text-white  justify-content-center">
+    <div *ngIf="instance" class="mt-3">
+        <div class="rounded d-flex bg-secondary bg-opacity-75 text-white  justify-content-center">
             <div class="p-3">
                 <h1>{{instance.name | titlecase}}</h1>
                 <span> <i class="fa fa-shop"></i>&nbsp;{{instance.branch_name | titlecase}}</span><br>
