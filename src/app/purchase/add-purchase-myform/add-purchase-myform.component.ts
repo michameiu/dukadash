@@ -9,7 +9,7 @@ import { options } from './options';
 })
 export class AddPurchaseMyformComponent implements OnInit {
 
-    formItems: any = options;
+    formItems = options;
     url: string = "api/v1/shop-branches/6/purchases/"
     extra_fields: any
     originalInstance: any
@@ -38,6 +38,9 @@ export class AddPurchaseMyformComponent implements OnInit {
 
     ngOnInit() {
 
+    }
+    formChanges(form: any) {
+        console.log(form)
     }
 
     preSendData(data: any) {

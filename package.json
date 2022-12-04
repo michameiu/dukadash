@@ -22,7 +22,7 @@
     "@ngxs/storage-plugin": "^3.7.5",
     "@ngxs/store": "^3.7.5",
     "@popperjs/core": "^2.11.6",
-    "@sisitech/myform": "0.0.17",
+    "@sisitech/myform": "0.0.19",
     "@sisitech/ngxs-auth": "0.0.6",
     "@sisitech/schematics": "^1.0.14",
     "@sisitech/tables": "0.0.17",

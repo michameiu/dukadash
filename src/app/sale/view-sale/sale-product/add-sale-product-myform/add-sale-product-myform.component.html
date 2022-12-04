@@ -4,6 +4,7 @@
   </h1>
   <app-myform [extraFields]="extra_fields" [formItems]="formItems" [url]="url"
     (onValidatedData)="onValidatedData($event)" [submitButtonText]='"SaleProduct"' [formGroupOrder]="formGroupOrder"
-    [preSaveDataFunction]="preSendData" [hideButtons]=false (onPostedData)="onPostedData($event)" [instance]="instance">
+    (onFormChanges)="formChanges($event)" [preSaveDataFunction]="preSendData" [hideButtons]=false
+    (onPostedData)="onPostedData($event)" [instance]="instance">
   </app-myform>
 </div>

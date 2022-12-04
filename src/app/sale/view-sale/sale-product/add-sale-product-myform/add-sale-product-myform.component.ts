@@ -9,7 +9,7 @@ import { options } from './options';
 })
 export class AddSaleProductMyformComponent implements OnInit {
 
-    formItems: any = options;
+    formItems = options;
     url: string = "api/v1/sales/1/products/"
 
     @Input()
@@ -19,8 +19,8 @@ export class AddSaleProductMyformComponent implements OnInit {
     //Required Fieds: selling_price, sale, product
     //Other fields: active, serial_numbers, quantity
     formGroupOrder = [
-        ["selling_price"],
-        ["product", 'transaction_type'],
+        ["product"],
+        ["selling_price", 'transaction_type'],
         ["serial_numbers", "quantity"]
     ]
     args = {}
@@ -57,6 +57,11 @@ export class AddSaleProductMyformComponent implements OnInit {
     }
     get shopId() {
         return this._shopId
+    }
+    formChanges(form: any) {
+        console.log(form)
+
+        // this.formItems.actions.POST.quantity.show_only=""
     }
 
     ngOnInit() {
