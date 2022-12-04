@@ -88,7 +88,8 @@ export const options = {
         "max_length": 500,
         "from_field": "product",
         "show_only": true,
-        "show_only_field": "require_serial_number"
+        "show_only_field": "require_serial_number",
+        "show_reset_value": false
       },
       "quantity": {
         "type": "integer",
@@ -99,7 +100,8 @@ export const options = {
         "max_value": 2147483647,
         "from_field": "product",
         "show_only": false,
-        "show_only_field": "require_serial_number"
+        "show_only_field": "require_serial_number",
+        "show_reset_value": false
       },
       "status": {
         "type": "string",

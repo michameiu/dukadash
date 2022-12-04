@@ -21,7 +21,8 @@ export class AddSaleProductMyformComponent implements OnInit {
     formGroupOrder = [
         ["product"],
         ["selling_price", 'transaction_type'],
-        ["serial_numbers", "quantity"]
+        ["quantity"],
+        ["serial_numbers"]
     ]
     args = {}
     _instance: any
