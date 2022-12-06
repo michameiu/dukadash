@@ -60,16 +60,7 @@ export class ListPurchaseMyTablesComponent implements OnInit, OnDestroy {
       name: "sold_count",
       source: "stats.sold_count"
     },
-    "total_price",
-    {
-      name: 'View',
-      type: "actions",
-      data: [
-        {
-          name: "View"
-        }
-      ]
-    },
+    "total_price"
   ]
 
   shopBranchForm = new FormGroup({

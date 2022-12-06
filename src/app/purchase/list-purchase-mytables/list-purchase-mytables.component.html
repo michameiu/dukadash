@@ -12,8 +12,9 @@
     <hr />
   </div>
   <my-app-tables searchFieldName="name" searchFieldNameMessage="Purchase" [enableEdit]="enableEdit"
-    [enableDelete]="enableDelete" [listTypeUrl]="url" [instanceUrl]="instanceUrl" [args]='args' [page_size]="pageSize"
-    [showNumbering]="showNumbering" [headers]="headers" (actionsEvent)="handleActions($event)">
+    [enableView]="enableEdit" [enableDelete]="enableDelete" [listTypeUrl]="url" [instanceUrl]="instanceUrl"
+    [args]='args' [page_size]="pageSize" [showNumbering]="showNumbering" [headers]="headers"
+    (actionsEvent)="handleActions($event)">
 
     <div header>
       <app-myinput componentType="form" [data]="shopBranchOptions" [form]="shopBranchForm" formControName="branch">

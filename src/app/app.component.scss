@@ -35,3 +35,9 @@ div.content {
     border-color: #ffac18;
     background-color: #ffac18;
 }
+
+::ng-deep .btn-info {
+    color: white;
+    border-color: #0dcaf0;
+    background-color: #0dcaf0;
+}

@@ -25,7 +25,7 @@
     "@sisitech/myform": "0.0.23",
     "@sisitech/ngxs-auth": "0.0.6",
     "@sisitech/schematics": "^1.0.14",
-    "@sisitech/tables": "0.0.17",
+    "@sisitech/tables": "0.0.21",
     "@types/bootstrap": "^5.2.6",
     "bootstrap": "^5.1.3",
     "rxjs": "~7.5.0",

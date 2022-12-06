@@ -49,15 +49,15 @@ export class ListSaleMyTablesComponent implements OnInit {
     },
     "total_price",
 
-    {
-      name: 'View',
-      type: "actions",
-      data: [
-        {
-          name: "View"
-        }
-      ]
-    },
+    // {
+    //   name: 'View',
+    //   type: "actions",
+    //   data: [
+    //     {
+    //       name: "View"
+    //     }
+    //   ]
+    // },
   ]
 
   constructor(private route: Router) { }
