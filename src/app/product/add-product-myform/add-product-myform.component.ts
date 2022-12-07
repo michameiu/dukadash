@@ -19,7 +19,8 @@ export class AddProductMyformComponent implements OnInit {
     //Other fields: active, require_serial_number, shop
     formGroupOrder = [
         ["shop", "name"],
-        ["require_serial_number", "active"]
+        ["require_serial_number", "active"],
+        ['description']
     ]
     args = {}
     instance: any;

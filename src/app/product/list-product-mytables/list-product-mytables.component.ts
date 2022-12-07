@@ -38,7 +38,16 @@ export class ListProductMyTablesComponent implements OnInit, OnDestroy {
 
   // Remmber to pass it to the component
   headers = [
-    "shop_name", "name", "require_serial_number"
+    "shop_name",
+    {
+      name: "Product Name",
+      source: 'name'
+    },
+    {
+      name: "requires serial number",
+      source: "require_serial_number_display"
+    },
+    'description'
   ]
   shopForm = new FormGroup({
     shop: new FormControl()

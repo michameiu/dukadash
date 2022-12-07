@@ -56,7 +56,7 @@ export const options = {
         "type": "string",
         "required": false,
         "read_only": false,
-        "label": "Name",
+        "label": "Vendor Name",
         "max_length": 45
       },
       "vendor": {

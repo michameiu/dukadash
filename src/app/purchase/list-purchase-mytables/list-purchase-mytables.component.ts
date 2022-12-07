@@ -43,7 +43,7 @@ export class ListPurchaseMyTablesComponent implements OnInit, OnDestroy {
   // Remmber to pass it to the component
   headers = [
     "branch_name",
-    "name",
+    { source: "name", name: "Vendor Name" },
     {
       name: "Transaction Type",
       source: "transaction_type_display"

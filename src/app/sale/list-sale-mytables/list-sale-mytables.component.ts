@@ -38,7 +38,7 @@ export class ListSaleMyTablesComponent implements OnInit {
   // Remmber to pass it to the component
   headers = [
     "branch_name",
-    "name",
+    { source: "name", name: "Customer Name" },
     {
       name: "Transaction Type",
       source: "transaction_type_display"

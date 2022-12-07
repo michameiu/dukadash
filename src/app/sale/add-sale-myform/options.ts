@@ -56,7 +56,7 @@ export const options = {
         "type": "string",
         "required": false,
         "read_only": false,
-        "label": "Name",
+        "label": "Customer Name",
         "max_length": 45
       },
       "company": {
@@ -76,7 +76,7 @@ export const options = {
         "type": "string",
         "required": false,
         "read_only": false,
-        "label": "Phone",
+        "label": "Customer Phone",
         "max_length": 20
       },
       "status": {

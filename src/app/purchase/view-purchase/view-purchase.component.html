@@ -33,15 +33,15 @@
 
 
         <div class="d-flex mt-3 justify-content-center">
-            <h3 class="">Products</h3>
+            <h3 class="">Purchase Products</h3>
         </div>
         <div class="row">
-            <div class="col-md-8" *ngIf="url !=''">
+            <div class="col-8" *ngIf="url !=''">
                 <app-lsit-purchase-product (onActions)="onActions($event)" [args]="args" [url]="url"
                     [total_price]="instance.total_price">
                 </app-lsit-purchase-product>
             </div>
-            <div class="col-md-4" *ngIf="shopId">
+            <div class="col-4" *ngIf="shopId">
                 <app-add-purchase-product-myform (onAddedUpdate)="onAddedUpdate($event)" [shopId]="shopId"
                     [extra_fields]="extra_fields" [instance]="selectedPurchaseProduct">
                 </app-add-purchase-product-myform>

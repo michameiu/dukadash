@@ -11,9 +11,10 @@
     </div>
     <hr />
   </div> -->
-  <my-app-tables instanceUrl="api/v1/sale-products" searchFieldName="school_name" searchFieldNameMessage="SaleProduct"
-    [enableEdit]="enableEdit" [enableDelete]="enableDelete" [listTypeUrl]="url" [args]='args' [page_size]="pageSize"
-    [showNumbering]="showNumbering" [headers]="headers" (actionsEvent)="handleActions($event)">
+  <my-app-tables instanceUrl="api/v1/sale-products" searchFieldName="school_name" [enableSearch]="false"
+    searchFieldNameMessage="SaleProduct" [enableEdit]="enableEdit" [enableDelete]="enableDelete" [listTypeUrl]="url"
+    [args]='args' [page_size]="pageSize" [showNumbering]="showNumbering" [headers]="headers"
+    (actionsEvent)="handleActions($event)">
 
     <div footer>
       <h5>Total Price: {{total_price | currency:"KES ":"symbol-narrow"}}</h5>

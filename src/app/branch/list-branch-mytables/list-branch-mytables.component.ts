@@ -36,7 +36,10 @@ export class ListBranchMyTablesComponent implements OnInit {
   // Remmber to pass it to the component
   headers = [
     'shop_name',
-    'name',
+    {
+      name: "Branch Name",
+      source: 'name'
+    },
     'contact_name',
     'contact_phone',
   ]

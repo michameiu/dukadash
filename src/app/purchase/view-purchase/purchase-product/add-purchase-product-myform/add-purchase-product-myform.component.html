@@ -1,6 +1,10 @@
 <div class="container">
+  <h1 class="page-title p-3">
+    Add / Edit Purchase Product
+  </h1>
   <app-myform [extraFields]="extra_fields" [formItems]="formItems" [url]="url"
-    (onValidatedData)="onValidatedData($event)" [submitButtonText]='"PurchaseProduct"' [formGroupOrder]="formGroupOrder"
-    [preSaveDataFunction]="preSendData" [hideButtons]=false (onPostedData)="onPostedData($event)" [instance]="instance">
+    (onValidatedData)="onValidatedData($event)" [submitButtonText]='"Purchase Product"'
+    [formGroupOrder]="formGroupOrder" [preSaveDataFunction]="preSendData" [hideButtons]=false
+    (onPostedData)="onPostedData($event)" [instance]="instance">
   </app-myform>
 </div>

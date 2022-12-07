@@ -30,6 +30,13 @@ export const options = {
                 "read_only": true,
                 "label": "Modified"
             },
+            "description": {
+                "type": "string",
+                "required": false,
+                "read_only": false,
+                "label": "Description",
+                "max_length": 1000
+            },
             "active": {
                 "type": "boolean",
                 "required": false,
