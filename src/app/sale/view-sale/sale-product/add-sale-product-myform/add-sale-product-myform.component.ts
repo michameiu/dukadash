@@ -61,7 +61,10 @@ export class AddSaleProductMyformComponent implements OnInit {
     }
     formChanges(form: any) {
         console.log(form)
-
+        if (form.product) {
+            this.formItems.actions.POST.serial_numbers.url = `api/v1/purchase-product-items?product_id=${form.product}`
+            console.log(this.formItems.actions.POST.serial_numbers.url)
+        }
         // this.formItems.actions.POST.quantity.show_only=""
     }
 

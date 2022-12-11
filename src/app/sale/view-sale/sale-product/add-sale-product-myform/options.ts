@@ -59,7 +59,7 @@ export const options = {
         "label": "Selling price"
       },
       "serial_numbers": {
-        "type": "string",
+        "type": "multifield",
         "required": false,
         "read_only": false,
         "label": "Serial numbers",
@@ -67,6 +67,10 @@ export const options = {
         "from_field": "product",
         "show_only": true,
         "show_only_field": "require_serial_number",
+        "url": "",
+        "display_name": "serial_number",
+        "search_field": "serial_number",
+        "value_field": "serial_number",
         "show_reset_value": false
       },
       "quantity": {
