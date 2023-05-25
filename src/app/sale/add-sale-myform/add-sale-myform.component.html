@@ -1,9 +1,13 @@
 <div class="container">
   <h1 class="page-title p-3">
-    Sale
+
   </h1>
-  <app-myform [extraFields]="extra_fields" [formItems]="formItems" [url]="url"
-    (onValidatedData)="onValidatedData($event)" [submitButtonText]='"Sale"'
-    [formGroupOrder]="formGroupOrder" [hideButtons]=false (onPostedData)="onPostedData($event)" [instance]="instance">
-  </app-myform>
+  <!-- <app-myform [extraFields]="extra_fields" [formItems]="formItems" [url]="url"
+    (onValidatedData)="onValidatedData($event)" [submitButtonText]='"Sale"' [formGroupOrder]="formSections"
+    [hideButtons]=false (onPostedData)="onPostedData($event)" [instance]="instance">
+  </app-myform> -->
+
+  <sistch-multistep-form [options]="multiStepForm">
+
+  </sistch-multistep-form>
 </div>

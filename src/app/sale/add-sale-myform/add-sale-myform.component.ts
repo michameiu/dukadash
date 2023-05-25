@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { options } from './options';
-
+import { MutliStepForm, MyFormSection } from "@sisitech/myform"
 @Component({
     selector: 'app-add-sale-myform',
     templateUrl: './add-sale-myform.component.html',
@@ -24,6 +24,46 @@ export class AddSaleMyformComponent implements OnInit {
     ]
     args = {}
     instance: any;
+
+
+    formSections: MyFormSection[] = [
+        {
+            title: "Customer Details",
+            subTitle: "Include their full location",
+            formGroupOrder: [
+                ["name", "company"],
+                ["phone", "customer_location"]
+            ]
+        },
+        {
+            title: "Sale Details",
+            subTitle: "Include their full location",
+            formGroupOrder: [
+                ["branch", "transaction_type"],
+                ["delivery_type", "date",]
+
+            ]
+        }
+    ]
+
+
+    multiStepForm: MutliStepForm = {
+        url: this.url,
+        options: options,
+
+        submitButtonText: "Sale",
+        forms: [
+            {
+                stepTitle: "Customer",
+                sections: [this.formSections[0]],
+            }, {
+                stepTitle: "Sale",
+                sections: [this.formSections[1]],
+            }
+        ]
+    }
+
+
 
     constructor(private route: ActivatedRoute, private router: Router) {
         this.route.queryParams.subscribe(params => {
